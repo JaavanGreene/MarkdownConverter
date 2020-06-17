@@ -23,6 +23,14 @@ class App extends Component {
     let output = this.state.output;
     return (
       <div className="App">
+        <div className="row header">
+          <div className="col-2"></div>
+          <div className="col-8">
+            <h1>Markdown to HTML Converter</h1>
+          </div>
+          <div className="col-2"></div>
+
+        </div>
         <div className="row spacingTop">
           <div className="col-2"></div>
           <div className="col-4">
@@ -30,10 +38,7 @@ class App extends Component {
               <h1>Markdown Input:</h1>
             </div>
             <div className="row">
-              <textarea ref={this.markdownInput} cols="50" rows="10" />
-            </div>
-            <div className="row btnRow">
-              <button onClick={() => this.renderOutput()} className="btn-primary">Submit</button>
+              <textarea ref={this.markdownInput} onChange={() => this.renderOutput()} cols="50" rows="15" />
             </div>
 
           </div>

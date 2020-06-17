@@ -24,4 +24,11 @@ code {
 .outputContainer {
   overflow-y: scroll;
   max-height: 30em;
+  background-color: #f6f6f4;
+  border-radius: 18px;
+  border: solid 1px gray;
+}
+
+.header {
+  background-color: #ffe01b;
 }
