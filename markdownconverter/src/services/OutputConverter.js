@@ -8,8 +8,8 @@ export class OutputConverter {
     }
 
     static convertMarkdown(input) {
-        input = this.convertLinks(input);
         input = this.convertParagraphs(input);
+        input = this.convertLinks(input);
         input = this.convertHeaders(input);
         return input;
     }
@@ -17,6 +17,8 @@ export class OutputConverter {
     static convertLinks(input) {
         let regLink = new RegExp(`\\[(.*?)\\]\\((.*?)\\)`, 'gm')
         input = input.replace(regLink, `<a href="$2" >$1</a>`);
+        let regexCleanup = new RegExp(`^\\<p\\>(<a.*?>.*?\\<\\/a\\>)<\\/p>.*?$`, 'gm')
+        input = input.replace(regexCleanup, `$1`);
         return input;
     }
 
